@@ -4,6 +4,7 @@
 while True:
    try:
       import numpy
+# numpy version 1.19.3 is required have not tested with 1.19.5 but 1.19.3 is working fine
       import datetime as dtim
       import time
       import os
@@ -11,14 +12,16 @@ while True:
       import pandas as pds
 #pandas version 1.0.5 is required
       import keyboard as kbad
-#keyboard any version will work. but pls install the keyboard module it is very necessary in this code.
+#keyboard latest version will work. but pls install the keyboard module it is very necessary in this code.
       import webbrowser as web
+# webbrowser module comes builtin
       import xlrd
       import openpyxl
-# this module comes builtin
+# openpyxl latest version will satisfy
+# xlrd version 1.2.0 is required
       import pyautogui as ptui
       break
-#pyautogui any version will work
+#pyautogui latest version will work
    except ImportError as i_recieved_an_import_error:
       i_recieved_an_import_error = str(i_recieved_an_import_error)
       print('Sorry Sir but I crashed because i faced',i_recieved_an_import_error , 'but i needed that module in order to run the code pls install it or let me help you.\n')
