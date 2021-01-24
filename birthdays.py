@@ -11,7 +11,7 @@ while True:
       import pandas as pds
 #pandas version 1.0.5 is required
       import keyboard as kbad
-#keyboard any version will work. but pls install this module it is very necessary.
+#keyboard any version will work. but pls install the keyboard module it is very necessary in this code.
       import webbrowser as web
       import xlrd
       import openpyxl
