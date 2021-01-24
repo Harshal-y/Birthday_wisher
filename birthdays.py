@@ -71,7 +71,7 @@ try:
             ptui.click()
             break
          else:
-            ag = ptui.locateCenterOnScreen('D:\downloads\web_whatsapp_send_msg_img_2.png')
+            ag = ptui.locateCenterOnScreen('web_whatsapp_send_msg_img_2.png')
       time.sleep(5.5)
       kbad.press_and_release('ctrl+w')
 except Exception as i_crashed:
@@ -81,7 +81,7 @@ except Exception as i_crashed:
 if __name__ == '__main__':
    today = dtim.datetime.now().strftime('%d-%m')
    yearNow = dtim.datetime.now().strftime('%Y')
-   gk = pds.read_excel('D:/Py/Birthday list.xlsx', sheet_name=0, nrows=35, index_col=0, usecols=[0, 1, 2, 3, 4, 5, 6])
+   gk = pds.read_excel('Birthday list.xlsx', sheet_name=0, nrows=35, index_col=0, usecols=[0, 1, 2, 3, 4, 5, 6])
    wit = []
    for index, item in gk.iterrows():
       bday = item['Birthday_date'].strftime('%d-%m')
@@ -92,4 +92,4 @@ if __name__ == '__main__':
    for i in wit:
       yr = gk.loc[i, 'Year Wished']
       gk.loc[i, 'Year Wished'] = str(yr) + ',' + str(yearNow)
-   gk.to_excel('D:/Py/Birthday list.xlsx')
+   gk.to_excel('Birthday list.xlsx')
