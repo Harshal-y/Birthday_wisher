@@ -2,7 +2,7 @@ Note :-
 
 	This repository is mainly for windows users.
 
-	Remeber that this code can only send a whatsapp message and that through web.whatsapp.com so you need to have web.whatsapp.com on your number.
+	Remeber that this code can only send a whatsapp message through your pc and that through web.whatsapp.com so you need to have web.whatsapp.com on your number.
 
 	Pls download this repository and its files by zip method only.
 
