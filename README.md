@@ -1,3 +1,7 @@
+Important :- 
+	
+	Pls put this program on the users task scheduler so that whenever the user opens his system the program gets executed.
+
 Note :- 
 
 	This repository is mainly for windows users. not tested this repository for linux and mac.
