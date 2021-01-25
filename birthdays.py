@@ -1,6 +1,6 @@
 # A birthday wisher program.
 
-# Sir this porgram sends a whatsapp message but for this you need to activate whatsapp web.
+# Sir this porgram sends a whatsapp message but for this you need to activate whatsapp web on your pc or desktop.
 while True:
    try:
       import numpy
