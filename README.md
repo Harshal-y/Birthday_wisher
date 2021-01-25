@@ -30,7 +30,7 @@ Credits :-
 	
 	Website - https://codewithharry.com/
 	
-	Video - https://codewithharry.com/videos/python-practice-programs-in-hindi-8 or https://www.youtube.com/watch?v=gW-qFwQJrUs
+	Idea from Video - https://codewithharry.com/videos/python-practice-programs-in-hindi-8 or https://www.youtube.com/watch?v=gW-qFwQJrUs
 	
 For More Info :-
 	
