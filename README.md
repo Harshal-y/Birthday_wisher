@@ -6,7 +6,7 @@ Note :-
 
 	Remeber that this program can only send a whatsapp message through your pc and that through web.whatsapp.com so you need to have web.whatsapp.com on your number and your pc.
 	
-	if you want to send birthday message through emails or any other way pls contact me and I will surely help you to do so.
+	if you want to send birthday message through emails or any other way pls contact me and I will surely help you do so.
 
 	Pls download this repository and its files by zip method if you don't have git or don't know how to use it.
 
