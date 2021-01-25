@@ -1,6 +1,6 @@
 Note :- 
 
-	This repository is mainly for windows users.
+	This repository is mainly for windows users. not tested this repository for linux and mac.
 	
 	U shall require python interpreter from https://www.python.org/downloads/release/python-387/ to run birthday.py but installing the latest version will also work though I used python version 3.8.7 to make this repository.
 
