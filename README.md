@@ -2,7 +2,7 @@ Note :-
 
 	This repository is mainly for windows users.
 	
-	U shall require python interpreter from https://www.python.org/downloads/release/python-387/ but install latest version will also work but 3.8.7 is the version I used to make this project and to run birthday.py file as it is written in python programming language version 3.8.7.
+	U shall require python interpreter from https://www.python.org/downloads/release/python-387/ to run birthday.py but installing the latest version will also work though I used python version 3.8.7 to make this repository.
 
 	Remeber that this code can only send a whatsapp message through your pc and that through web.whatsapp.com so you need to have web.whatsapp.com on your number.
 
