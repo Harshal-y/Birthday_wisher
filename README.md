@@ -4,7 +4,9 @@ Note :-
 	
 	U shall require python interpreter from https://www.python.org/downloads/release/python-387/ to run birthday.py but installing the latest version will also work though I used python version 3.8.7 to make this repository.
 
-	Remeber that this code can only send a whatsapp message through your pc and that through web.whatsapp.com so you need to have web.whatsapp.com on your number.
+	Remeber that this program can only send a whatsapp message through your pc and that through web.whatsapp.com so you need to have web.whatsapp.com on your number and your pc.
+	
+	if you want to send birthday message through emails or any other way pls contact me and I will surely help you.
 
 	Pls download this repository and its files by zip method if you don't have git or don't know how to use it.
 
