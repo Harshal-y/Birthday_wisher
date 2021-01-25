@@ -22,39 +22,59 @@ while True:
       import pyautogui as ptui
       break
 #pyautogui latest version will work.
-   except ImportError as i_recieved_an_import_error:
-      i_recieved_an_import_error = str(i_recieved_an_import_error)
-      print('Sorry Sir but I crashed because i faced',i_recieved_an_import_error , 'but i needed that module in order to run the code pls install it or let me help you.\n')
-      print('Sir I shall open the command prompt window to help you pls do not close it manually at any point of time we will do it automatically.\n')
+   except ImportError as i_encountered_an_import_error:
+      # Handling Import error if the user does not have all the required modules and storing the error in i_encountered_an_import_error.
+      i_encountered_an_import_error = str(i_encountered_an_import_error)
+      # converting i_encountered_an_import_error to a string so that i can use it in print commands.
+      print('Sorry Sir but I crashed because i faced', i_encountered_an_import_error , 'but i am trying to handle it.\n')
+      # Showing the error to the user
       users_input = input('For Help press \'h\' :\n')
-      if users_input == 'h':
+      # asking the user for help
+      if users_input == 'h' or users_input == '-h' or users_input == '--h' or users_input == '-help' or users_input == '--help' or users_input == 'help':
+         print('Sir I shall open the command prompt window to help you pls do not close it manually at any point of time I will do it automatically.\n')
+         # Telling the user that I can help you and install the necessary modules on your behalf but for that I need the keyboard module of python and if you don't have the keyboard module pls install it by typing the following in your command prompt -> 'pip install keyboard'.
+         time.sleep(9)
+         # Adding a time.sleep() of 9 seconds so that the user gets the time to read the above message.
          os.startfile('cmd.exe')
+         # starting the command prompt to help the user by installing the required modules so that the program does not crash or stop.
          try:
             import keyboard
-            import_error_1 = i_recieved_an_import_error.find('\'')
-            import_error = i_recieved_an_import_error[import_error_1+1:len(i_recieved_an_import_error)-1]
+            # Checking if the user has keyboard module installed in his system or not as the program requires it to install other required modules if the user faces an ImportError.
+            start_index = i_encountered_an_import_error.find('\'')
+            # Using the following method to get the name of the module that could not be imported -> str(start_index:end_index)
+            # Here we use the above method to find the start index that is if the error is like -> No module named 'so and so for eg. pandas', so the name of the module starts after "'" so we find the index of "'" and add 1 to it so that our program knows where the name of the module starts from.
+            name_of_module_that_could_not_be_imported = i_encountered_an_import_error[start_index+1:len(i_encountered_an_import_error)-1]
+            # In the above line we used len() function of python that returns the total characters present in that string. Next we subtract 1 from the length of the total characters present in the string because this returns the second last word of our string. Below we have an example to better explain this line :
+            # We did -> i_encountered_an_import_error[start_index+1:len(i_encountered_an_import_error)] but this returned the name of the module that could not be imported plus "'" character.
             time.sleep(3)
-            if str(import_error) == 'pandas':
-               keyboard.write('pip install '+str(import_error)+'==1.0.5')
-            elif str(import_error) == 'numpy':
-               keyboard.write('pip install '+str(import_error)+'==1.19.3')
-            elif str(import_error) == 'xlrd':
-               keyboard.write('pip install '+str(import_error)+'==1.2.0')
+            # we used a time.sleep() of 3 seconds so that our program gets time till the command prompt window appears because our program has to write in command prompt to install the required modules.
+            if str(name_of_module_that_could_not_be_imported) == 'pandas':
+               # we use an if statement to tell our program that if pandas module could not be imported then install it's version 1.0.5
+               keyboard.write('pip install '+str(name_of_module_that_could_not_be_imported)+'==1.0.5')
+               # Here we write in the command prompt to install the pandas module if not found or could not be imported.
+            elif str(name_of_module_that_could_not_be_imported) == 'numpy':
+               keyboard.write('pip install '+str(name_of_module_that_could_not_be_imported)+'==1.19.3')
+            elif str(name_of_module_that_could_not_be_imported) == 'xlrd':
+               keyboard.write('pip install '+str(name_of_module_that_could_not_be_imported)+'==1.2.0')
             else:
-               keyboard.write('pip install '+str(import_error))
+               keyboard.write('pip install '+str(name_of_module_that_could_not_be_imported))
             keyboard.press_and_release('enter')
             time.sleep(10)
             keyboard.press_and_release('alt+f4')
          except ImportError as an_error:
             print('Sir I am opening command prompt so that i can help you pls come back here when the command prompt window appears.\n')
-            time.sleep(12)
-            print('Sorry sir but you need to install the keyboard module of python with this command : pip install keyboard so that I can help you further.\n')
+            time.sleep(9)
+            os.startfile('cmd.exe')
+            print('Sorry sir but when I was trying to help you I found that you do not have the keyboard module installed but I required it to run this code could you pls install the keyboard module of python by writing this command in your command prompt : \'pip install keyboard\'\n')
       else:
          print('Sir I can\'t understand what u want to say but thanks for using...\n')
          time.sleep(2)
          print('I am closing this program as this porgram is not working and crashing.\n')
          time.sleep(9)
          exit(0)
+   except Exception as caught_an_exception:
+      caught_an_exception = str(caught_an_exception)
+      print(f'Sorry Sir but the program crashed because {caught_an_exception} pls fix this issue or contact the owner of this repository for help -> \'github.com/Harshal-y\'')
 try:
    def sendmsg(name, to, msg):
       msg = msg+' to '+name
