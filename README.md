@@ -15,6 +15,8 @@ Note :-
 	Remember to edit Birthday.xlsx file and add your friends name, their date of birth, birthday message, phone number and other necessary information.
 	
 	If you face any issues or errors pls do contact me.
+	
+	Make sure you do not have any of your other programs named in the name of the modules that this program requires
 
 	Pls let me know if you can help me improve this project thanks in advance.
 
