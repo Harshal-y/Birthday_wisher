@@ -3,7 +3,6 @@
 # Sir this porgram sends a whatsapp message but for this you need to activate whatsapp web on your pc or desktop.
 
 # Below we are staring an infine while loop and trying to import the required modules.
-stop_count = 0
 while True:
    try:
 # Handling if the program encounters any error during the execution.
@@ -108,46 +107,90 @@ while True:
 try:
    # Trying to define a function that will send the whatsapp message for the user.
    def sendmsg(name, to, msg):
-      msg = msg+' to '+name
+      # This function takes three parameter :
+      # 1st: name of the person to whom the program has to wish.
+      # 2nd: the phone number of the person to whom the message has to be delivered.
+      # 3rd: message the user wants to say to the person who's birthday is.
+      # Converting the message to a message like -> 'Happy birthday' + to + 'Harry' -> Happy birthday to Harry.
       dt = dtim.datetime.now()
+      # getting the current date and time.
       msgs = f'WhatsApp Message to {name} on {to} with message {msg} has been sent.'
+      # Telling the user about who's birthday is today and what message is being sent to them.
       print(msgs)
+      # displaying the message to the user
       with open('my1logs.txt', 'a') as my1:
+         # creating a file where we will save to whom we have sent birthday message and when.
          my1.write(f'[{dt}] '+msg+'\n')
+         # writing in a file that on this date this time this message was sent
       web.open('https://web.whatsapp.com/send?phone=+'+to+'&text='+msg)
+      # Sending the whatsapp messge through pc by opening web.whatsapp.com on the browser.
       while True:
+         # Again Starting an infinite while loop
          ag = ptui.locateCenterOnScreen('web_whatsapp_send_msg_img_2.png')
+         # Locating the send button of whatsapp web on the screen.
          if ag is None:
+            # If button not found then we wait for 1 second and try if we could find it this time.
             time.sleep(1)
             pass
          elif ag is not None:
+            # If the button was found on the screen.
             ptui.moveTo(ag)
+            # Move the cursor to the button.
             ptui.click()
+            # Click the button finally and send the whatsapp message.
             break
          else:
             ag = ptui.locateCenterOnScreen('web_whatsapp_send_msg_img_2.png')
+            # If we fail to find the button then here we try relocating it on the screen.
       time.sleep(5.5)
+      # Waiting for the message to get sent completely.
       kbad.press_and_release('ctrl+w')
+      # Closing the browser.
 except Exception as i_crashed:
+   # Handling if any exception occurs while trying to send the message.
    i_crashed = str(i_crashed)
+   # Converting the exception to a string.
    print(f'Sir I faced :',i_crashed,'issue so the program crashed')
+   # Telling the user what error occured during the execution of the program. 
 
 if __name__ == '__main__':
+   # Creating a if name == main so that if we try to import the function anywhere else the below code does not get run automatically there also.
    try:
+      # Trying to catch error if any.
       today = dtim.datetime.now().strftime('%d-%m')
+      # Getting the current date and month.
       yearNow = dtim.datetime.now().strftime('%Y')
-      gk = pds.read_excel('Birthday list.xlsx', sheet_name=0, nrows=35, index_col=0, usecols=[0, 1, 2, 3, 4, 5, 6])
+      # Getting the current year so that to know if we have sent message in this year or not.
+      gk = pds.read_excel('Birthday list.xlsx', sheet_name=0, index_col=0, usecols=[0, 1, 2, 3, 4, 5, 6])
       wit = []
+      # Creating a empty list to get the index of the name of the person whom to send birthday message.
       for index, item in gk.iterrows():
+         # Getting the index and the item from the excel file where we have stored the birthday information of the friends.
          bday = item['Birthday_date'].strftime('%d-%m')
+         # Getting the birthday date and month on the person.
          print(bday)
+         # Showing the user the birtday dates and years of his friends or family members.
          if(today==bday) and yearNow not in str(item['Year Wished']):
+            # Checking if today is the birthday of any of his friends and if we have already wished them or not.
             sendmsg(str(item['Name']), str(item['Phone Number']),str(item['Message']))
+            # If today is the birthday and we have not yet wished the person then preparring to send the birthday message by calling our sendmsg function and passing the nasme phone number and mesage arguement.
             wit.append(index)
+            # Here we are adding the index of the name of the person who's birthday is today to our wit list.
       for i in wit:
+         # Here we are updating our excel file after sending the birthday message to the person and adding the year we have wished them in our excel file so that we do not resend the message to him.
          yr = gk.loc[i, 'Year Wished']
          gk.loc[i, 'Year Wished'] = str(yr) + ',' + str(yearNow)
       gk.to_excel('Birthday list.xlsx')
+      # Here we have finally updated our excel file.
    except Exception as exception_occured:
+      # Handling errors (if any) that occur during the execution of the program.
       exception_occured = str(exception_occured)
+      # Converting the error to a string.
       print('Sorry Sir but I crashed because :', exception_occured, 'pls fix this issue or conatct the owner of this repository for help - \'github.com/Harshal-y\'')
+      # Telling the user what error has occured and how to resolve it.
+
+
+# Hope you did not face any errors with this program.
+
+
+
