@@ -1,6 +1,6 @@
 Important :- 
 	
-	Pls put this program on the users task scheduler so that whenever the user opens his system the program gets executed.
+	Pls put this program on the users task scheduler so that whenever the user opens his or her system this program gets executed.
 
 Note :- 
 
