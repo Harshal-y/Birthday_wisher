@@ -82,17 +82,21 @@ except Exception as i_crashed:
    print(f'Sir I faced :',i_crashed,'issue so the program crashed')
 
 if __name__ == '__main__':
-   today = dtim.datetime.now().strftime('%d-%m')
-   yearNow = dtim.datetime.now().strftime('%Y')
-   gk = pds.read_excel('Birthday list.xlsx', sheet_name=0, nrows=35, index_col=0, usecols=[0, 1, 2, 3, 4, 5, 6])
-   wit = []
-   for index, item in gk.iterrows():
-      bday = item['Birthday_date'].strftime('%d-%m')
-      print(bday)
-      if(today==bday) and yearNow not in str(item['Year Wished']):
-         sendmsg(str(item['Name']), str(item['Phone Number']),str(item['Message']))
-         wit.append(index)
-   for i in wit:
-      yr = gk.loc[i, 'Year Wished']
-      gk.loc[i, 'Year Wished'] = str(yr) + ',' + str(yearNow)
-   gk.to_excel('Birthday list.xlsx')
+   try:
+      today = dtim.datetime.now().strftime('%d-%m')
+      yearNow = dtim.datetime.now().strftime('%Y')
+      gk = pds.read_excel('Birthday list.xlsx', sheet_name=0, nrows=35, index_col=0, usecols=[0, 1, 2, 3, 4, 5, 6])
+      wit = []
+      for index, item in gk.iterrows():
+         bday = item['Birthday_date'].strftime('%d-%m')
+         print(bday)
+         if(today==bday) and yearNow not in str(item['Year Wished']):
+            sendmsg(str(item['Name']), str(item['Phone Number']),str(item['Message']))
+            wit.append(index)
+      for i in wit:
+         yr = gk.loc[i, 'Year Wished']
+         gk.loc[i, 'Year Wished'] = str(yr) + ',' + str(yearNow)
+      gk.to_excel('Birthday list.xlsx')
+   except Exception as exception_occured:
+      exception_occured = str(exception_occured)
+      print('Sorry Sir but I crashed because :', exception_occured, 'pls fix this issue or conatct the owner of this repository for help - \'github.com/Harshal-y\'')
