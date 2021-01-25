@@ -23,5 +23,17 @@ Note :-
 	Make sure you do not have any of your other programs named in the name of the modules that this program requires
 
 	Pls let me know if you can help me improve this project thanks in advance.
+	
+Credits :- 
+	
+	CodeWithHarry
+	
+	Website - https://codewithharry.com/
+	
+	Video - https://codewithharry.com/videos/python-practice-programs-in-hindi-8
+	
+For More Info :-
+	
+	Video - https://codewithharry.com/videos/python-practice-programs-in-hindi-8
 
 Hope you enjoy this
