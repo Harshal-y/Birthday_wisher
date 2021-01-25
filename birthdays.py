@@ -129,6 +129,7 @@ try:
          ag = ptui.locateCenterOnScreen('web_whatsapp_send_msg_img_2.png')
          # Locating the send button of whatsapp web on the screen.
          if ag is None:
+            print('Could not send Message')
             # If button not found then we wait for 1 second and try if we could find it this time.
             time.sleep(1)
             pass
@@ -140,6 +141,7 @@ try:
             # Click the button finally and send the whatsapp message.
             break
          else:
+            print('Could not send Message')
             ag = ptui.locateCenterOnScreen('web_whatsapp_send_msg_img_2.png')
             # If we fail to find the button then here we try relocating it on the screen.
       time.sleep(5.5)
