@@ -6,7 +6,7 @@ pandas_required_version = '1.0.5'
 numpy_required_version = '1.19.3'
 xlrd_required_version = '1.2.0'
 
-# The above variable names are the ones that we require specific version of. But we have not used them yet. But we shall surely use them in the near future.
+# The above variable names descibe that we require specific version of those modules. But we have not used them in our program yet. But we shall surely use them in the near future.
 
 # Below we are staring an infine while loop and trying to import the required modules.
 
