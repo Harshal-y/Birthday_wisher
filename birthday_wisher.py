@@ -271,7 +271,7 @@ if __name__ == '__main__':
       for index, item in gk.iterrows():
          # Getting the index and the item from the excel file where we have stored the birthday information of the friends.
          bday = item['Birthday_date'].strftime('%d-%m')
-         # Getting the birthday date and month on the person.
+         # Getting the birthday date and month on the person and storing it in a variable bday short for birthdayday.
          print(bday)
          # Showing the user the birtday dates and years of his friends or family members.
          if(today==bday) and yearNow not in str(item['Year Wished']):
