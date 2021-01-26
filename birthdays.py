@@ -2,6 +2,12 @@
 
 # Sir this porgram sends a whatsapp message but for this you need to activate whatsapp web on your pc or desktop.
 
+pandas_required_version = '1.0.5'
+numpy_required_version = '1.19.3'
+xlrd_required_version = '1.2.0'
+
+# The above variable names are the ones that we require specific version of. But we have not used them yet. But we shall surely use them in the near future.
+
 # Below we are staring an infine while loop and trying to import the required modules.
 
 # Here I have tried to handle the case that if the user does not have the required modules installed, The execution of the program does not stop and the user does not get an Import Error.
@@ -287,8 +293,5 @@ if __name__ == '__main__':
       print('Sorry Sir but I crashed because :', exception_occured, 'pls fix this issue or conatct the owner of this repository for help - \'github.com/Harshal-y\'')
       # Telling the user what error has occured and how to resolve it.
 
-
 # Hope you did not face any errors with this program.
-
-
 
