@@ -3,6 +3,8 @@
 # Sir this porgram sends a whatsapp message but for this you need to activate whatsapp web on your pc or desktop.
 
 # Below we are staring an infine while loop and trying to import the required modules.
+
+# Here I have tried to handle the case that if the user does not have the required modules installed, The execution of the program does not stop and the user does not get an Import Error.
 while True:
    try:
 # Handling if the program encounters any error during the execution.
@@ -11,19 +13,19 @@ while True:
       import datetime as dtim
       import time
       import os
-# The above three modules come builtin with python.
+# The above three modules come builtin with python you don't need to install it.
       import pandas as pds
 # Pandas version 1.0.5 is required
       import keyboard as kbad
-# Keyboard latest version will work. but pls install the keyboard module it is very necessary in this code.
+# Keyboard latest version will work though i have used version 0.13.5. but pls install the keyboard module it is very necessary in this program.
       import webbrowser as web
-# Webbrowser module comes built-in.
+# Webbrowser module comes built-in you don't need to install it.
       import xlrd
-      import openpyxl
-# Openpyxl latest version will satisfy.
 # Xlrd version 1.2.0 is required.
+      import openpyxl
+# Openpyxl latest version will satisfy though i have used version 3.0.5.
       import pyautogui as ptui
-# Pyautogui latest version will work.
+# Pyautogui latest version will work though i have used version 0.9.52.
       break
 # Breaking the while loop after all the necessary modules get imported.
    except ImportError as i_encountered_an_import_error:
@@ -33,7 +35,7 @@ while True:
       print('Sorry Sir but I crashed because i faced', i_encountered_an_import_error , 'but i am trying to handle it on my own.\n')
       # Showing the error to the user and asking him if he could fix it.
       users_input = input('For Help press \'h\' :\n')
-      # asking the user for help
+      # Asking the user for help
       if users_input == 'h' or users_input == '-h' or users_input == '--h' or users_input == '-help' or users_input == '--help' or users_input == 'help' or users_input == \'h\':
          print('Sir I shall open the command prompt window to help you pls do not close it manually at any point of time I will do it automatically.\n')
          # Telling the user that I can help you and install the necessary modules on your behalf but for that I need the keyboard module of python and if you don't have the keyboard module pls install it by typing the following in your command prompt -> 'pip install keyboard'.
@@ -86,32 +88,126 @@ while True:
             print('Sorry sir but when I was trying to help you I found that you do not have the keyboard module installed but I required it to run this code could you pls install the keyboard module of python by writing this command in your command prompt : \'pip install keyboard\'\n')
             # Telling the user to pls install the keyboard module so that the program can help the user.
             time.sleep(20)
-            # Waiting for the user to install the keyboard module.
+            # Waiting for the user to install the keyboard module ( approximate time required - 20 seconds ).
       else:
          print('Sir I can\'t understand what u want to say but thanks for using...\n')
-         # Handling the execution of the program if the user declined the help
+         # Handling the execution of the program if the user declined the help.
          time.sleep(2)
-         # Waiting for the user to read the command
+         # Waiting for the user to read the command ( approximate time required - 2 seconds ).
          print('I am closing this program as this porgram is not working and crashing.\n')
-         # Telling the user that the program cannot run due to some error and because the user has declined the help so the program cannot do anything
+         # Telling the user that the program cannot run due to some error and because the user has declined the help so the program cannot do anything.
          time.sleep(9)
-         # Again Waiting for the user to read the message
+         # Again Waiting for the user to read the message ( approximate time required - 9 seconds ).
          exit(0)
-         # Exiting the program as the help was denied by the user when the program told that it faced some issues
+         # Exiting the program as the help was denied by the user when the program told that it faced some issues.
    except Exception as caught_an_exception:
       # Handling if any error other than import error occurs during the execution of the program.
       caught_an_exception = str(caught_an_exception)
       # Changing the error to a string so that we can print it nicely on the screen.
       print(f'Sorry Sir but the program crashed because {caught_an_exception} pls fix this issue or contact the owner of this repository for help -> \'github.com/Harshal-y\'')
       # Telling the user about the error and asking him to fix the error if the user know how and why the error occured or contact the owner of this repository for help on this error.
+      exit(0)
+      # Closing the program
+
+# Finding the version installed of necessary modules that require only a specific version to run this program.
+
+# Remeber: that you will not be able to find the version of some of the builtin modules of python for eg. os.__version__ is not a valid command to find the verion of the os module.
+
+numpy_version_installed = numpy.__version__
+# Finding the version of numpy installed in the users system.
+pandas_version_installed = pandas.__version__
+# Finding the version of pandas installed in the users system.
+xlrd_version_installed = xlrd.__version__
+# Finding the version of xlrd installed in the users system.
+
+# Checking if the version of the below modules installed is the required version or not.
+
+# Handling the error that might occur if our program does not find the specific version of Numpy, Pandas and Xlrd installed in the users system.
+
+if str(numpy_version_installed) == '1.19.3' and pandas_version_installed == '1.0.5' and xlrd_version_installed == '1.2.0':
+   # If We have the specific version of the above modules we tell our program to continue the execution.
+   pass
+else:
+   # If We do not have the specific version of the above modules we tell our program to find which modules specific version is not installed and then we tell our program to install the specific version of that module so that we do not face any error.
+   if str(numpy_version_installed) != '1.19.3':
+      # Checking if we don't have the required version of Numpy installed in the users system.
+      print('Sorry Sir but you do not have the required version of Numpy installed in your system.')
+      # Telling the user that the required version of Numpy is not installed in the users system.
+      help = input('Sir should I install the required version or not ( y / n ) : \n')
+      if help == 'yes' or help == 'y' or help == 'yep' or help == 'sure' or help == 'ok' or help == 'yeh' or help == 'yeah':
+         os.startfile('cmd.exe')
+         # Starting the command prompt to install the required version of Numpy if we do not have the required version.
+         time.sleep(8)
+         # Waiting for the command prompt window to open (approximate waiting time - 8 seconds).
+         keyboard.write('pip uninstall numpy')
+         # Telling our program to uninstall Numpy.
+         time.sleep(11)
+         # Waiting for the modules currently installed version to get uninstalled ( approximate time required - 11 seconds ).
+         keyboard.write('pip install numpy==1.19.3')
+         # Telling our program to install the required version of Numpy that is 1.19.3.
+         time.sleep(11)
+         # Waiting for our module to get installed so that we do not face any error in future ( approximate time required - 11 seconds ).
+         keyboard.press_and_release('Alt+f4')
+         # Closing the command prompt window after the installation .
+      else:
+         print('Ok Sir I think you don\'t need my help but I am afraid that you may encounter some error while the execution of this program continues.', 'Sir Have a Nice Day', u'\U0001F642')
+   if str(pandas_version_installed) != '1.0.5':
+      # Checking if we don't have the required version of Numpy installed in the users system.
+      print('Sorry Sir but you do not have the required version of Pandas installed in your system.')
+      # Telling the user that the required version of Numpy is not installed in the users system.
+      help = input('Sir should I install the required version or not ( y / n ) : \n')
+      if help == 'yes' or help == 'y' or help == 'yep' or help == 'sure' or help == 'ok' or help == 'yeh' or help == 'yeah':
+         os.startfile('cmd.exe')
+         # Starting the command prompt to install the required version of Numpy if we do not have the required version.
+         time.sleep(8)
+         # Waiting for the command prompt window to open (approximate waiting time - 8 seconds).
+         keyboard.write('pip uninstall pandas')
+         # Telling our program to uninstall Numpy.
+         time.sleep(11)
+         # Waiting for the modules currently installed version to get uninstalled ( approximate time required - 11 seconds ).
+         keyboard.write('pip install pandas==1.0.5')
+         # Telling our program to install the required version of Numpy that is 1.19.3.
+         time.sleep(11)
+         # Waiting for our module to get installed so that we do not face any error in future ( approximate time required - 11 seconds ).
+         keyboard.press_and_release('Alt+f4')
+         # Closing the command prompt window after the installation .
+      else:
+         print('Ok Sir I think you don\'t need my help but I am afraid that you may encounter some error while the execution of this program continues.', 'Sir Have a Nice Day', u'\U0001F642')
+   if str(xlrd_version_installed) != '1.2.0':
+      # Checking if we don't have the required version of Numpy installed in the users system.
+      print('Sorry Sir but you do not have the required version of Xlrd installed in your system.')
+      # Telling the user that the required version of Numpy is not installed in the users system.
+      help = input('Sir should I install the required version or not ( y / n ) : \n')
+      if help == 'yes' or help == 'y' or help == 'yep' or help == 'sure' or help == 'ok' or help == 'yeh' or help == 'yeah':
+         os.startfile('cmd.exe')
+         # Starting the command prompt to install the required version of Numpy if we do not have the required version.
+         time.sleep(8)
+         # Waiting for the command prompt window to open (approximate waiting time - 8 seconds).
+         keyboard.write('pip uninstall xlrd')
+         # Telling our program to uninstall Numpy.
+         time.sleep(11)
+         # Waiting for the modules currently installed version to get uninstalled ( approximate time required - 11 seconds ).
+         keyboard.write('pip install xlrd==1.2.0')
+         # Telling our program to install the required version of Numpy that is 1.19.3.
+         time.sleep(11)
+         # Waiting for our module to get installed so that we do not face any error in future ( approximate time required - 11 seconds ).
+         keyboard.press_and_release('Alt+f4')
+         # Closing the command prompt window after the installation .
+      else:
+         print('Ok Sir I think you don\'t need my help but I am afraid that you may encounter some error while the execution of this program continues.', 'Sir Have a Nice Day', u'\U0001F642')
+
+# I am sorry for the bad code but I will surely improve it in the near future and will use names like module_required_version to make this code reusable.
+
 try:
    # Trying to define a function that will send the whatsapp message for the user.
    def sendmsg(name, to, msg):
       # This function takes three parameter :
-      # 1st: name of the person to whom the program has to wish.
-      # 2nd: the phone number of the person to whom the message has to be delivered.
-      # 3rd: message the user wants to say to the person who's birthday is.
-      # Converting the message to a message like -> 'Happy birthday' + to + 'Harry' -> Happy birthday to Harry.
+      #                                         1st: name of the person to whom the program has to wish.
+      
+      #                                         2nd: the phone number of the person to whom the message has to be delivered.
+      
+      #                                         3rd: message the user wants to say to the person who's birthday is.
+      
       dt = dtim.datetime.now()
       # getting the current date and time.
       msgs = f'WhatsApp Message to {name} on {to} with message {msg} has been sent.'
@@ -144,8 +240,8 @@ try:
             print('Could not send Message')
             ag = ptui.locateCenterOnScreen('web_whatsapp_send_msg_img_2.png')
             # If we fail to find the button then here we try relocating it on the screen.
-      time.sleep(5.5)
-      # Waiting for the message to get sent completely.
+      time.sleep(5)
+      # Waiting for the message to get sent completely ( approximate time required - 6 seconds ).
       kbad.press_and_release('ctrl+w')
       # Closing the browser.
 except Exception as i_crashed:
