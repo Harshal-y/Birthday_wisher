@@ -265,7 +265,7 @@ if __name__ == '__main__':
       # Getting the current date and month.
       yearNow = dtim.datetime.now().strftime('%Y')
       # Getting the current year so that to know if we have sent message in this year or not.
-      gk = pds.read_excel('Birthday list.xlsx', sheet_name=0, index_col=0, usecols=[0, 1, 2, 3, 4, 5, 6])
+      gk = pds.read_excel('Birthday_list.xlsx', sheet_name=0, index_col=0, usecols=[0, 1, 2, 3, 4, 5, 6])
       wit = []
       # Creating a empty list to get the index of the name of the person whom to send birthday message.
       for index, item in gk.iterrows():
@@ -284,7 +284,7 @@ if __name__ == '__main__':
          # Here we are updating our excel file after sending the birthday message to the person and adding the year we have wished them in our excel file so that we do not resend the message to him.
          yr = gk.loc[i, 'Year Wished']
          gk.loc[i, 'Year Wished'] = str(yr) + ',' + str(yearNow)
-      gk.to_excel('Birthday list.xlsx')
+      gk.to_excel('Birthday_list.xlsx')
       # Here we have finally updated our excel file.
    except Exception as exception_occured:
       # Handling errors (if any) that occur during the execution of the program.
