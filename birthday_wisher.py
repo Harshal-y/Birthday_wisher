@@ -226,25 +226,37 @@ try:
          # writing in a file that on this date this time this message was sent
       web.open('https://web.whatsapp.com/send?phone=+'+to+'&text='+msg)
       # Sending the whatsapp messge through pc by opening web.whatsapp.com on the browser.
-      while True:
+      trying_to_send_msg_limit = 163
+      # Setting the time limit for the message to be sent.
+      current_msg_sent_times = 0
+      # Initializing the start count of the number of times the message was tried to be sent.
+      while current_msg_sent_times < trying_to_send_msg_limit:
          # Again Starting an infinite while loop
+         print('Trying to send the message.')
+         # Telling the user that the porgram is trying to send the message to the chosen person.
          ag = ptui.locateCenterOnScreen('web_whatsapp_send_msg_img_2.png')
          # Locating the send button of whatsapp web on the screen.
          if ag is None:
-            print('Could not send Message')
+            print('Message could not be sent')
             # If button not found then we wait for 1 second and try if we could find it this time.
             time.sleep(1)
+            current_msg_sent_times += 1
             pass
          elif ag is not None:
             # If the button was found on the screen.
+            print('Sending Message')
+            # Telling the user that the program is retrying to send the message.
             ptui.moveTo(ag)
             # Move the cursor to the button.
             ptui.click()
             # Click the button finally and send the whatsapp message.
+            print('Message Successfully sent')
+            # Telling the user that the message has been sent.
             break
          else:
-            print('Could not send Message')
+            print('Message could not be sent')
             ag = ptui.locateCenterOnScreen('web_whatsapp_send_msg_img_2.png')
+            current_msg_sent_times += 1
             # If we fail to find the button then here we try relocating it on the screen.
       time.sleep(5)
       # Waiting for the message to get sent completely ( approximate time required - 6 seconds ).
