@@ -146,7 +146,7 @@ else:
          time.sleep(8)
          # Waiting for the command prompt window to open (approximate waiting time - 8 seconds).
          keyboard.write('pip uninstall numpy')
-         # Telling our program to uninstall Numpy.
+         # Telling our program to uninstall Numpy installed version.
          time.sleep(11)
          # Waiting for the modules currently installed version to get uninstalled ( approximate time required - 11 seconds ).
          keyboard.write('pip install numpy==1.19.3')
@@ -154,51 +154,51 @@ else:
          time.sleep(11)
          # Waiting for our module to get installed so that we do not face any error in future ( approximate time required - 11 seconds ).
          keyboard.press_and_release('Alt+f4')
-         # Closing the command prompt window after the installation .
+         # Closing the command prompt window after the installation is completed.
       else:
          print('Ok Sir I think you don\'t need my help but I am afraid that you may encounter some error while the execution of this program continues.', 'Sir Have a Nice Day', u'\U0001F642')
    if str(pandas_version_installed) != '1.0.5':
-      # Checking if we don't have the required version of Numpy installed in the users system.
+      # Checking if we don't have the required version of Pandas installed in the users system.
       print('Sorry Sir but you do not have the required version of Pandas installed in your system.')
-      # Telling the user that the required version of Numpy is not installed in the users system.
+      # Telling the user that the required version of Pandas is not installed in the users system.
       help = input('Sir should I install the required version or not ( y / n ) : \n')
       if help == 'yes' or help == 'y' or help == 'yep' or help == 'sure' or help == 'ok' or help == 'yeh' or help == 'yeah':
          os.startfile('cmd.exe')
-         # Starting the command prompt to install the required version of Numpy if we do not have the required version.
+         # Starting the command prompt to install the required version of Pandas if we do not have the required version.
          time.sleep(8)
          # Waiting for the command prompt window to open (approximate waiting time - 8 seconds).
          keyboard.write('pip uninstall pandas')
-         # Telling our program to uninstall Numpy.
+         # Telling our program to uninstall Pandas installed version.
          time.sleep(11)
          # Waiting for the modules currently installed version to get uninstalled ( approximate time required - 11 seconds ).
          keyboard.write('pip install pandas==1.0.5')
-         # Telling our program to install the required version of Numpy that is 1.19.3.
+         # Telling our program to install the required version of Pandas that is 1.0.5.
          time.sleep(11)
          # Waiting for our module to get installed so that we do not face any error in future ( approximate time required - 11 seconds ).
          keyboard.press_and_release('Alt+f4')
-         # Closing the command prompt window after the installation .
+         # Closing the command prompt window after the installation is completed.
       else:
          print('Ok Sir I think you don\'t need my help but I am afraid that you may encounter some error while the execution of this program continues.', 'Sir Have a Nice Day', u'\U0001F642')
    if str(xlrd_version_installed) != '1.2.0':
-      # Checking if we don't have the required version of Numpy installed in the users system.
+      # Checking if we don't have the required version of Xlrd installed in the users system.
       print('Sorry Sir but you do not have the required version of Xlrd installed in your system.')
-      # Telling the user that the required version of Numpy is not installed in the users system.
+      # Telling the user that the required version of Xlrd is not installed in the users system.
       help = input('Sir should I install the required version or not ( y / n ) : \n')
       if help == 'yes' or help == 'y' or help == 'yep' or help == 'sure' or help == 'ok' or help == 'yeh' or help == 'yeah':
          os.startfile('cmd.exe')
-         # Starting the command prompt to install the required version of Numpy if we do not have the required version.
+         # Starting the command prompt to install the required version of Xlrd if we do not have the required version.
          time.sleep(8)
          # Waiting for the command prompt window to open (approximate waiting time - 8 seconds).
          keyboard.write('pip uninstall xlrd')
-         # Telling our program to uninstall Numpy.
+         # Telling our program to uninstall Xlrd installed version.
          time.sleep(11)
          # Waiting for the modules currently installed version to get uninstalled ( approximate time required - 11 seconds ).
          keyboard.write('pip install xlrd==1.2.0')
-         # Telling our program to install the required version of Numpy that is 1.19.3.
+         # Telling our program to install the required version of Xlrd that is 1.2.0.
          time.sleep(11)
          # Waiting for our module to get installed so that we do not face any error in future ( approximate time required - 11 seconds ).
          keyboard.press_and_release('Alt+f4')
-         # Closing the command prompt window after the installation .
+         # Closing the command prompt window after the installation is completed.
       else:
          print('Ok Sir I think you don\'t need my help but I am afraid that you may encounter some error while the execution of this program continues.', 'Sir Have a Nice Day', u'\U0001F642')
 
@@ -208,11 +208,11 @@ try:
    # Trying to define a function that will send the whatsapp message for the user.
    def sendmsg(name, to, msg):
       # This function takes three parameter :
-      #                                         1st: name of the person to whom the program has to wish.
+                                                 # 1st: name of the person to whom the program has to wish.
       
-      #                                         2nd: the phone number of the person to whom the message has to be delivered.
+                                                 # 2nd: the phone number of the person to whom the message has to be delivered.
       
-      #                                         3rd: message the user wants to say to the person who's birthday is.
+                                                 # 3rd: message the user wants to say to the person who's birthday is.
       
       dt = dtim.datetime.now()
       # getting the current date and time.
