@@ -252,7 +252,7 @@ try:
          # writing in a file that on this date this time this message was sent
       web.open('https://web.whatsapp.com/send?phone=+'+to+'&text='+msg)
       # Sending the whatsapp messge through pc by opening web.whatsapp.com on the browser.
-      trying_to_send_msg_limit = 163
+      trying_to_send_msg_limit = 363
       # Setting the time limit for the message to be sent.
       current_msg_sent_times = 0
       # Initializing the start count of the number of times the message was tried to be sent.
