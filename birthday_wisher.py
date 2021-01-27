@@ -1,4 +1,4 @@
-# A birthday wisher python program.
+# A birthday wisher program writte in python.
 
 # Sir this porgram sends a whatsapp message but for this you need to activate whatsapp web on your pc or desktop.
 
