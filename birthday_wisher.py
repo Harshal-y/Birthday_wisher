@@ -2,9 +2,9 @@
 
 # Sir this porgram sends a whatsapp message but for this you need to activate whatsapp web on your pc or desktop.
 
-pandas_required_version = '1.0.5'
-numpy_required_version = '1.19.3'
-xlrd_required_version = '1.2.0'
+pandas_required_version = '==1.0.5'
+numpy_required_version = '==1.19.3'
+xlrd_required_version = '==1.2.0'
 
 # The above variable names descibe that we require specific version of those modules. But we have not used them in our program yet. But we shall surely use them in the near future.
 
