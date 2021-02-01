@@ -62,15 +62,15 @@ while True:
             # We require specific version of some modules so that we can run our program smoothly so we are using if elif and else.
             if str(name_of_module_that_could_not_be_imported) == 'pandas':
                # We use an if statement to tell our program that if the pandas module could not be imported then install it's version 1.0.5.
-               keyboard.write('pip install '+str(name_of_module_that_could_not_be_imported)+'==1.0.5')
+               keyboard.write('pip install '+str(name_of_module_that_could_not_be_imported)+pandas_required_version)
                # Here we use our keyboard module to write in the command prompt that install pandas module version - 1.0.5.
             elif str(name_of_module_that_could_not_be_imported) == 'numpy':
                # We use an elif statement to tell our program that if the numpy module could not be imported then install it's version 1.19.3.
-               keyboard.write('pip install '+str(name_of_module_that_could_not_be_imported)+'==1.19.3')
+               keyboard.write('pip install '+str(name_of_module_that_could_not_be_imported)+numpy_required_version)
                # Here we use our keyboard module to write in the command prompt that install numpy module version - 1.19.3.
             elif str(name_of_module_that_could_not_be_imported) == 'xlrd':
                # We use an elif statement to tell our program that if the xlrd module could not be imported then install it's version 1.2.0.
-               keyboard.write('pip install '+str(name_of_module_that_could_not_be_imported)+'==1.2.0')
+               keyboard.write('pip install '+str(name_of_module_that_could_not_be_imported)+xlrd_required_version)
                # Here we use our keyboard module to write in the command prompt that install xlrd module version - 1.2.0.
             else:
                # We use an else statement to tell our program that if the module that could not be imported was not numpy or pandas or xlrd then install its latest version.
@@ -129,12 +129,12 @@ xlrd_version_installed = xlrd.__version__
 
 # Handling the error that might occur if our program does not find the specific version of Numpy, Pandas and Xlrd installed in the users system.
 
-if str(numpy_version_installed) == '1.19.3' and pandas_version_installed == '1.0.5' and xlrd_version_installed == '1.2.0':
+if str(numpy_version_installed) == numpy_required_version[2:] and pandas_version_installed == pandas_required_version[2:] and xlrd_version_installed == xlrd_required_version[2:]:
    # If We have the specific version of the above modules we tell our program to continue the execution.
    pass
 else:
    # If We do not have the specific version of the above modules we tell our program to find which modules specific version is not installed and then we tell our program to install the specific version of that module so that we do not face any error.
-   if str(numpy_version_installed) != '1.19.3':
+   if str(numpy_version_installed) != numpy_required_version[2:]:
       # Checking if we don't have the required version of Numpy installed in the users system.
       print('Sorry Sir but you do not have the required version of Numpy installed in your system.')
       # Telling the user that the required version of Numpy is not installed in the users system.
@@ -156,7 +156,7 @@ else:
          # pressing the enter key to confirm.
          time.sleep(11)
          # Waiting for the modules currently installed version to get uninstalled ( approximate time required - 11 seconds ).
-         keyboard.write('pip install numpy==1.19.3')
+         keyboard.write('pip install numpy'+numpy_required_version)
          # Telling our program to install the required version of Numpy that is 1.19.3.
          keyboard.press_and_release('enter')
          # pressing the enter key to Install numpy.
@@ -166,7 +166,7 @@ else:
          # Closing the command prompt window after the installation is completed.
       else:
          print('Ok Sir I think you don\'t need my help but I am afraid that you may encounter some error while the execution of this program continues.', 'Sir Have a Nice Day', u'\U0001F642')
-   if str(pandas_version_installed) != '1.0.5':
+   if str(pandas_version_installed) != pandas_required_version[2:]:
       # Checking if we don't have the required version of Pandas installed in the users system.
       print('Sorry Sir but you do not have the required version of Pandas installed in your system.')
       # Telling the user that the required version of Pandas is not installed in the users system.
@@ -188,7 +188,7 @@ else:
          # pressing the enter key to confirm.
          time.sleep(11)
          # Waiting for the modules currently installed version to get uninstalled ( approximate time required - 11 seconds ).
-         keyboard.write('pip install pandas==1.0.5')
+         keyboard.write('pip install pandas'+pandas_required_version)
          # Telling our program to install the required version of Pandas that is 1.0.5.
          keyboard.press_and_release('enter')
          # pressing the enter key to install pandas.
@@ -198,7 +198,7 @@ else:
          # Closing the command prompt window after the installation is completed.
       else:
          print('Ok Sir I think you don\'t need my help but I am afraid that you may encounter some error while the execution of this program continues.', 'Sir Have a Nice Day', u'\U0001F642')
-   if str(xlrd_version_installed) != '1.2.0':
+   if str(xlrd_version_installed) != xlrd_required_version[2:]:
       # Checking if we don't have the required version of Xlrd installed in the users system.
       print('Sorry Sir but you do not have the required version of Xlrd installed in your system.')
       # Telling the user that the required version of Xlrd is not installed in the users system.
@@ -220,7 +220,7 @@ else:
          # pressing the enter key to confirm.
          time.sleep(11)
          # Waiting for the modules currently installed version to get uninstalled ( approximate time required - 11 seconds ).
-         keyboard.write('pip install xlrd==1.2.0')
+         keyboard.write('pip install xlrd'+xlrd_required_version)
          # Telling our program to install the required version of Xlrd that is 1.2.0.
          keyboard.press_and_release('enter')
          # pressing the enter key to install xlrd.
